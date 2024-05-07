@@ -148,8 +148,7 @@ QUnit.module(
                 },
             };
             registry.category("services").add("multi_tab", multiTabService);
-            registry.category("services").add("bus_service", 
-            );
+            registry.category("services").add("bus_service", busService);
         },
     },
     () => {

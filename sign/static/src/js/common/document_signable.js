@@ -1060,9 +1060,9 @@ const InputBottomSheet = Widget.extend({
 
 export const SignableDocument = Document.extend({
   events: {
-    "pdfToComplete .o_sign_pdf_iframe": function (e) {
-      this.$validateBanner.hide().css("opacity", 0);
-    },
+    // "pdfToComplete .o_sign_pdf_iframe": function (e) {
+    //   this.$validateBanner.hide().css("opacity", 0);
+    // },
 
     "pdfCompleted .o_sign_pdf_iframe": function (e) {
       if (this.name_list && this.name_list.length > 0) {

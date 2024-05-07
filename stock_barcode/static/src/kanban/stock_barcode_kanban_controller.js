@@ -48,7 +48,7 @@ export class StockBarcodeKanbanController extends KanbanController {
         if (this.props.resModel != 'stock.picking') {
             return;
         }
-        const kwargs = { barcode, context: this.props.context };
+        const kwargs = { barcode };
         const res = await this.model.orm.call(this.props.resModel, 'filter_on_barcode', [], kwargs);
         if (res.action) {
             this.actionService.doAction(res.action);

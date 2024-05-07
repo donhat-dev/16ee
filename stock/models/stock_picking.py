@@ -856,7 +856,7 @@ class Picking(models.Model):
         package_level_done = self.mapped('package_level_ids').filtered(lambda pl: pl.is_done and pl.state == 'confirmed')
         package_level_done.write({'is_done': False})
         moves._action_assign()
-        package_level_done.write({'is_done': True}) 
+        package_level_done.write({'is_done': True})
 
         return True
 
@@ -1205,7 +1205,7 @@ class Picking(models.Model):
         """
         # Clean-up the context key to avoid forcing the creation of immediate transfers.
         ctx = dict(self.env.context)
-        ctx.pop('x', None)
+        ctx.pop('default_immediate_transfer', None)
         self = self.with_context(ctx)
         for picking in self:
             if picking.state in ('done', 'cancel'):

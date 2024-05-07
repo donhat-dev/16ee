@@ -532,7 +532,7 @@ export default class BarcodeModel extends EventBus {
                 this.notification.add(_t("This serial number is already used."), { type: 'warning' });
                 return Promise.reject();
             }
-        }
+        }   
         await this._updateLotName(line, lotName);
     }
 

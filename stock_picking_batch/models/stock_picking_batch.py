@@ -262,7 +262,7 @@ class StockPickingBatch(models.Model):
         self.picking_ids.action_assign()
 
     def action_put_in_pack(self):
-        """ Action to put move lines with 'Done' quantities into a newfaction_done pack
+        """ Action to put move lines with 'Done' quantities into a new pack
         This method follows same logic to stock.picking.
         """
         self.ensure_one()

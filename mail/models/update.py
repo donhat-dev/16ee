@@ -88,8 +88,6 @@ class PublisherWarrantyContract(AbstractModel):
         @type cron_mode: boolean
         """
         try:
-            # return True
-
             try:
                 result = self._get_sys_logs()
             except Exception:

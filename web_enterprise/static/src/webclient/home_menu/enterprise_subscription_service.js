@@ -88,7 +88,7 @@ export class SubscriptionManager {
             this.orm.call("ir.config_parameter", "get_param", ["database.already_linked_email"]),
         ]);
 
-        // await this.orm.call("publisher_warranty.contract", "update_notification", [[]]); #FIXME
+        await this.orm.call("publisher_warranty.contract", "update_notification", [[]]);
 
         const expirationDate = await this.orm.call("ir.config_parameter", "get_param", [
             "database.expiration_date",
@@ -116,7 +116,7 @@ export class SubscriptionManager {
     }
 
     async checkStatus() {
-        // await this.orm.call("publisher_warranty.contract", "update_notification", [[]]);
+        await this.orm.call("publisher_warranty.contract", "update_notification", [[]]);
 
         const expirationDateStr = await this.orm.call("ir.config_parameter", "get_param", [
             "database.expiration_date",
@@ -171,15 +171,8 @@ class ExpiredSubscriptionBlockUI extends Component {
         this.subscription = useState(useService("enterprise_subscription"));
     }
 }
-// ExpiredSubscriptionBlockUI.template = xml`
-// <t t-if="subscription.daysLeft &lt;= 0">
-//     <div class="o_blockUI"/>
-//     <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 1100" class="d-flex align-items-center justify-content-center">
-//         <ExpirationPanel/>
-//     </div>
-// </t>`;
 ExpiredSubscriptionBlockUI.template = xml`
-<t t-if="">
+<t t-if="subscription.daysLeft &lt;= 0">
     <div class="o_blockUI"/>
     <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 1100" class="d-flex align-items-center justify-content-center">
         <ExpirationPanel/>

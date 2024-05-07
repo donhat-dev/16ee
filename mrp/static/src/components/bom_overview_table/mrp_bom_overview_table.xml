@@ -12,7 +12,7 @@
                     </div>
                     <div class="text-center">
                         <h3><t t-esc="formatFloat(data.quantity_available)"/> <t t-if="showUom" t-esc="props.uomName"/></h3>
-                        <span>Free 1to Use</span>
+                        <span>Free to Use</span>
                     </div>
                     <div t-if="data.hasOwnProperty('earliest_capacity')" class="ps-5 text-center">
                         <h3><t t-esc="formatFloat(data.earliest_capacity)"/> <t t-if="showUom" t-esc="props.uomName"/></h3>
